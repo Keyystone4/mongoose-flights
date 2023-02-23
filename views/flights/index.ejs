@@ -1,3 +1,5 @@
+<%- include('../partials/header')%>
+
 <h2>All Flights</h2>
 
 
@@ -20,7 +22,8 @@
         <td><%= m.airport %></td>
         <td><%= m.flightNo %></td>
         <td><%= m.departures %></td>
-        <td><%= m.destinations  %></td>
+        <td><%= m.destinations %></td>
+        <td><a href="/flights/<%= m._id %>">DETAILS</a></td>
       </tr>
     <!-- Close the forEach using EJS here -->
     <% }); %>

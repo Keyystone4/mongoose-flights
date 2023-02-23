@@ -8,6 +8,8 @@ var flightsCtrl = require('../controllers/flights')
 router.get('/new', flightsCtrl.new);
 // GET/ flights / index
 router.get('/', flightsCtrl.index);
+// GET/flights/:id/ show
+router.get('/:id', flightsCtrl.show);
 //POST / flights / create
 router.post('/', flightsCtrl.create);
 
