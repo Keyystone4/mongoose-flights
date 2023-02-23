@@ -12,7 +12,7 @@ module.exports = {
 
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight){
-        console.log(flight);
+        
         res.render('flights/show', { flight });
     })
     
@@ -20,7 +20,6 @@ function show(req, res) {
 }
 
 function create(req, res) {
-    console.log(req.body)
     const flight = new Flight(req.body);
     flight.save(function(err) {
         // if we dont redirect, the newpage will be shown with /flights in the 

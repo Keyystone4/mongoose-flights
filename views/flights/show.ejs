@@ -38,3 +38,38 @@
 <% } else { %>
   <h5>No Destination Yet</h5>
 <% } %>
+
+<h2>Add Tickets</h2>
+<form action="/flights/<%= flight._id %>/destinations" method="POST">
+  <label>Seat:
+    <input name="seat" required pattern="[A-F][1-9]\d?">
+  </label><br>
+  <label>Price:
+    <input type="number" name="price">
+  </label>
+  <br>
+  <button type="submit">Add Ticket</button>
+</form>
+
+<% if (flight.tickets) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Seat</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% flight.tickets.forEach(function(t) { %>
+        <tr>
+          <td><%= t.seat %></td>
+          <td><%= t.price %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Tickets Yet</h5>
+<% } %>
+
+<%- include('../partials/footer') %>
